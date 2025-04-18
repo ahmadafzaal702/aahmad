@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Toggle } from "@/components/ui/toggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+
+import { ThemeMenu } from "../theme/ThemeMenu";
+
 
 // Navbar FC
 const Navbar = () => {
@@ -21,7 +24,7 @@ const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between px-4">
+        <div className="flex h-16 items-center justify-between px-4">
           {/* Left side - Name/Logo */}
           <div className=" flex items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -48,6 +51,9 @@ const Navbar = () => {
 
           {/* Right side - Actions */}
           <div className="flex items-center space-x-4">
+            <div>
+              <ThemeMenu />
+            </div>
             <div className="hidden md:block">
               <Button variant="outline" size="sm">
                 Sign In
@@ -76,7 +82,7 @@ const Navbar = () => {
                   <div className="flex-1 pt-6">
                     {navItems.map((item) => (
                       <Link
-                        key={item.name}
+                        key={item.slug}
                         href={item.href}
                         className="block py-2 px-4 text-lg font-medium transition-colors hover:text-primary"
                         onClick={() => setIsMobile(false)}
