@@ -7,7 +7,9 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+import { SocialLinks } from '../shared';
 
 // Form validation schema
 const formSchema = z.object({
@@ -16,7 +18,8 @@ const formSchema = z.object({
   message: z.string().min(10, 'Message is too short').max(500),
 });
 
-export function ContactSection() {
+// Contact FC
+const ContactSection = () =>  {
   const {
     register,
     handleSubmit,
@@ -32,8 +35,9 @@ export function ContactSection() {
     alert('Message sent successfully!');
   };
 
+  // Contact FC return
   return (
-    <section className="container py-12" id="contact">
+    <section className="py-12 px-4 md:px-24" id="contact">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -144,42 +148,12 @@ export function ContactSection() {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Follow Me</h3>
-            <div className="flex gap-4">
-              {[
-                { icon: Linkedin, url: "https://linkedin.com/in/yourprofile" },
-                { icon: Github, url: "https://github.com/yourusername" },
-                { icon: Twitter, url: "https://twitter.com/yourhandle" },
-              ].map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ y: -5 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-secondary text-primary hover:bg-primary/10"
-                >
-                  <social.icon className="h-5 w-5" />
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          {/* Optional: Map Embed */}
-          <div className="rounded-lg overflow-hidden border">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.325538583603!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjkiVw!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
+          <SocialLinks isTitle={true} />
+ 
         </motion.div>
       </div>
     </section>
   );
 }
+
+export default ContactSection;

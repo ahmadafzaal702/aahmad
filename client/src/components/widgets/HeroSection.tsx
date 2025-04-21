@@ -28,28 +28,31 @@ const itemVariants = {
   },
 };
 
-export function HeroSection() {
+// Hero FC
+function HeroSection() {
+  // Hero FC return
   return (
     <motion.section
-      className="container flex min-h-[80vh] flex-col items-center justify-center gap-8 pb-8 pt-4 text-center md:pt-8"
+      className="min-h-[90vh] flex flex-col items-center justify-center text-center gap-8 pb-8 pt-4 md:pt-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div 
+      <motion.div
         className="max-w-3xl space-y-6"
         variants={itemVariants}
       >
-        <motion.h1 
-          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        <motion.h1
+          className="h-28 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           variants={itemVariants}
         >
           <span className="text-primary">
-            <TypeWriter />
+            Full Stack Developer | React.js | Next.js | Node.js
+            {/* <TypeWriter /> */}
           </span>
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           className="text-lg text-muted-foreground md:text-xl"
           variants={itemVariants}
         >
@@ -57,7 +60,7 @@ export function HeroSection() {
         </motion.p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="flex flex-wrap justify-center gap-4"
         variants={itemVariants}
       >
@@ -80,32 +83,8 @@ export function HeroSection() {
           </motion.a>
         </Button>
       </motion.div>
-
-      {/* Optional animated scroll indicator */}
-      <motion.div
-        className="absolute bottom-8"
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 5v14M19 12l-7 7-7-7" />
-        </svg>
-      </motion.div>
     </motion.section>
   );
 }
+
+export default HeroSection;

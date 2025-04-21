@@ -3,52 +3,15 @@
 import { motion } from 'framer-motion';
 import { Briefcase, CalendarDays, MapPin } from 'lucide-react';
 
-// Dummy experience data - replace with your actual experiences
-const experiences = [
-  {
-    id: 1,
-    role: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    duration: "2022 - Present",
-    location: "San Francisco, CA (Remote)",
-    description: [
-      "Lead the development of customer-facing dashboards using Next.js and TypeScript",
-      "Implemented design system that improved development speed by 40%",
-      "Mentored 3 junior developers in React best practices"
-    ],
-    skills: ["Next.js", "TypeScript", "React", "Tailwind CSS", "GraphQL"]
-  },
-  {
-    id: 2,
-    role: "Full Stack Developer",
-    company: "Digital Solutions LLC",
-    duration: "2019 - 2022",
-    location: "New York, NY",
-    description: [
-      "Developed and maintained 10+ microservices using Node.js and Express",
-      "Reduced API response times by 60% through query optimization",
-      "Collaborated with UX team to implement responsive designs"
-    ],
-    skills: ["Node.js", "React", "MongoDB", "AWS", "Docker"]
-  },
-  {
-    id: 3,
-    role: "Junior Web Developer",
-    company: "WebCraft Studios",
-    duration: "2017 - 2019",
-    location: "Boston, MA",
-    description: [
-      "Built 50+ client websites using modern JavaScript frameworks",
-      "Implemented CI/CD pipelines reducing deployment time by 70%",
-      "Won 'Employee of the Year' for innovative solutions"
-    ],
-    skills: ["JavaScript", "HTML/CSS", "PHP", "WordPress"]
-  }
-];
+// data import
+import { experiences } from '@/data/data';
 
-export function ExperienceSection() {
+// Experiences FC
+function ExperienceSection() {
+  
+  // Experiences FC return
   return (
-    <section className="container py-12" id="experience">
+    <section className="py-12 px-4 md:px-12" id="experience">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -136,3 +99,5 @@ export function ExperienceSection() {
     </section>
   );
 }
+
+export default ExperienceSection;
