@@ -3,11 +3,14 @@
 import { motion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Download, Award, School, BadgeCheck } from 'lucide-react';
+import { Download, Award, School } from 'lucide-react';
 
-export function AboutSection() {
+// About FC
+export const AboutSection = ()=> {
+  
+  // About FC return
   return (
-    <section className="container py-12" id="about">
+    <section className="py-12 px-4 md:px-12" id="about">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -36,8 +39,8 @@ export function AboutSection() {
           </Avatar>
 
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold">Your Name</h3>
-            <p className="text-muted-foreground">Senior Full Stack Developer</p>
+            <h3 className="text-2xl font-bold">Afzaal Ahmad</h3>
+            <p className="text-muted-foreground">Full Stack Developer</p>
           </div>
 
           <Button className="w-full md:w-auto">
@@ -57,19 +60,6 @@ export function AboutSection() {
               <div>
                 <p className="font-medium">5+ Years</p>
                 <p className="text-sm text-muted-foreground">Experience</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-3 p-3 rounded-lg bg-secondary"
-            >
-              <div className="p-2 rounded-full bg-primary/10 text-primary">
-                <BadgeCheck className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-medium">12+</p>
-                <p className="text-sm text-muted-foreground">Certifications</p>
               </div>
             </motion.div>
           </div>
@@ -117,10 +107,6 @@ export function AboutSection() {
                     <p className="text-sm text-muted-foreground">Stanford University | 2018 - 2020</p>
                   </div>
                 </div>
-                <p className="text-muted-foreground pl-11">
-                  Specialized in Artificial Intelligence and Machine Learning. Thesis on 
-                  "Neural Networks for Natural Language Processing".
-                </p>
               </motion.div>
 
               <motion.div 
@@ -136,9 +122,6 @@ export function AboutSection() {
                     <p className="text-sm text-muted-foreground">MIT | 2014 - 2018</p>
                   </div>
                 </div>
-                <p className="text-muted-foreground pl-11">
-                  Graduated with Honors. Minor in Mathematics. President of Computer Science Club.
-                </p>
               </motion.div>
             </div>
           </div>
@@ -150,10 +133,6 @@ export function AboutSection() {
               {[
                 "AWS Certified Solutions Architect",
                 "Google Professional Data Engineer",
-                "Microsoft Certified: Azure Developer",
-                "Dean's List (5 Semesters)",
-                "Best Thesis Award 2020",
-                "Hackathon Winner (2019)"
               ].map((item, index) => (
                 <motion.div
                   key={item}
@@ -174,3 +153,5 @@ export function AboutSection() {
     </section>
   );
 }
+
+export default AboutSection

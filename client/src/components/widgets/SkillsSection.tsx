@@ -5,55 +5,22 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-interface SkillSummaryI {
-  slug: string;
-  category: string;
-  skills: string;
-}
+// data import
+import { skillsSummary } from '@/data/data'
 
-const skillsSummary: SkillSummaryI[] = [
-    {
-        slug: "frontend",
-        category: "Frontend Development",
-        skills: "JavaScript, TypeScript, React.js, Next.js, React Native, Vue.js, Redux Toolkit, JSON, AJAX, SCSS/SASS, LESS, Tailwind CSS, Ant Design, Chakra UI, Shadcn/ui, Bootstrap, Material UI, DOM, ES6, jQuery, Hooks, Webpack, HTML5, CSS3, RESTful APIs, Third-Party Libraries.",
-    },
-    {
-        slug: "backend",
-        category: "Backend Development",
-        skills: "Node.js/Express.js, FastAPI, Python, MongoDB, Mongoose, MySQL, PostgreSQL, Model-View-Controller (MVC), Pinecone.",
-    },
-    {
-        slug: "mlai",
-        category: "Machine Learning & AI",
-        skills: "NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, Keras, ANN, RNN, LSTM, Transformers, LangChain, Hugging Face, OpenAI API.",
-    },
-    {
-        slug: "server",
-        category: "Server & Domain",
-        skills: "Vercel, AWS, AWS Amplify, Lambda Functions, API Gateway, S3 Bucket, Cloudinary.",
-    },
-    {
-        slug: "soft",
-        category: "Soft Skills",
-        skills: "Teamwork, Communication, Troubleshooting, Problem Solving, Work Ethics, Open to Positive Criticism, Adaptability, Collaboration, Ability to Work Under Pressure, Attention to Details.",
-    },
-    {
-        slug: "tools",
-        category: "Tools/OS",
-        skills: "Visual Studio Code, GIT, GitHub, Gitlab, Jira, Postman, Figma, Npm, Pip, Anaconda, Google Colab, Jupyter Notebooks.",
-    },
-];
 
-export function SkillsSection() {
+// Skills FC
+function SkillsSection() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   const toggleCategory = (slug: string) => {
     setExpandedCategory(expandedCategory === slug ? null : slug);
   };
 
+  // Skills FC return
   return (
-    <section className="container py-12" id="skills">
-      <motion.div 
+    <section className="py-12 px-4 md:px-12" id="skills">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -105,7 +72,7 @@ export function SkillsSection() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Badge 
+                        <Badge
                           variant="outline"
                           className="px-3 py-1 text-sm font-medium"
                         >
@@ -122,7 +89,7 @@ export function SkillsSection() {
       </div>
 
       {/* Animated proficiency meter */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -139,7 +106,7 @@ export function SkillsSection() {
                   {['Expert', 'Advanced', 'Intermediate'][index]}
                 </span>
               </div>
-              <motion.div 
+              <motion.div
                 className="h-2 bg-secondary rounded-full overflow-hidden"
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
@@ -161,3 +128,5 @@ export function SkillsSection() {
     </section>
   );
 }
+
+export default SkillsSection

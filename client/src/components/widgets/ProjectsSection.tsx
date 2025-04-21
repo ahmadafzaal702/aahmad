@@ -5,49 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Code, ExternalLink, Github } from 'lucide-react';
 
-// Dummy project data
-const projects = [
-  {
-    id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with Next.js, Stripe integration, and inventory management.',
-    tags: ['Next.js', 'Stripe', 'Tailwind CSS', 'Node.js'],
-    image: '/project-ecommerce.jpg',
-    githubUrl: '#',
-    liveUrl: '#',
-    category: 'fullstack'
-  },
-  {
-    id: 2,
-    title: 'AI Content Generator',
-    description: 'AI-powered content creation tool using OpenAI API with custom templates and history tracking.',
-    tags: ['React', 'OpenAI API', 'MongoDB', 'Express'],
-    image: '/project-ai.jpg',
-    githubUrl: '#',
-    liveUrl: '#',
-    category: 'ai'
-  },
-  {
-    id: 3,
-    title: 'Task Management App',
-    description: 'Real-time collaborative task management with drag-and-drop interface and team features.',
-    tags: ['React', 'Firebase', 'TypeScript', 'DnD'],
-    image: '/project-tasks.jpg',
-    githubUrl: '#',
-    liveUrl: '#',
-    category: 'frontend'
-  },
-  {
-    id: 4,
-    title: 'Health Analytics Dashboard',
-    description: 'Data visualization dashboard for health metrics with custom charts and export functionality.',
-    tags: ['Vue.js', 'D3.js', 'Python', 'FastAPI'],
-    image: '/project-health.jpg',
-    githubUrl: '#',
-    liveUrl: '#',
-    category: 'data'
-  },
-];
+// data import
+import { projects } from '@/data/data'
+
 
 const categories = [
   { id: 'all', name: 'All Projects' },
@@ -57,16 +17,18 @@ const categories = [
   { id: 'data', name: 'Data Visualization' },
 ];
 
-export function ProjectsSection() {
+// Projects FC
+function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
+  const filteredProjects = activeCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
+  // Projects FC return
   return (
-    <section className="container py-12" id="projects">
+    <section className="py-12 px-4 md:px-12" id="projects">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +43,7 @@ export function ProjectsSection() {
       </motion.div>
 
       {/* Category filters */}
-      <motion.div 
+      <motion.div
         className="flex flex-wrap justify-center gap-2 mb-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -122,7 +84,7 @@ export function ProjectsSection() {
                 alt={project.title}
                 className="w-full h-full object-cover"
                 initial={{ opacity: 0.9 }}
-                animate={{ 
+                animate={{
                   opacity: hoveredProject === project.id ? 1 : 0.9,
                   scale: hoveredProject === project.id ? 1.03 : 1
                 }}
@@ -134,7 +96,7 @@ export function ProjectsSection() {
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
-              
+
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => (
@@ -147,7 +109,7 @@ export function ProjectsSection() {
               {/* Action buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
-                animate={{ 
+                animate={{
                   opacity: hoveredProject === project.id ? 1 : 0,
                   y: hoveredProject === project.id ? 0 : 10
                 }}
@@ -172,8 +134,8 @@ export function ProjectsSection() {
             {/* Hover overlay */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0"
-              animate={{ 
-                opacity: hoveredProject === project.id ? 1 : 0 
+              animate={{
+                opacity: hoveredProject === project.id ? 1 : 0
               }}
               transition={{ duration: 0.3 }}
             />
@@ -196,3 +158,5 @@ export function ProjectsSection() {
     </section>
   );
 }
+
+export default ProjectsSection;

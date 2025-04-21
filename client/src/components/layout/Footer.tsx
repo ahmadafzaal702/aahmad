@@ -2,17 +2,29 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Mail, Phone, MapPin} from 'lucide-react';
 
-export function Footer() {
+import { SocialLinks } from '../shared';
+
+const navItems = [
+  { slug: "home", name: "Home", href: "/" },
+  { slug: "about", name: "About", href: "/about" },
+  { slug: "projects", name: "Projects", href: "/projects" },
+  { slug: "contact", name: "Contact", href: "/contact" },
+];
+
+
+// Footer FC
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Footer FC return
   return (
     <footer className="border-t bg-secondary/50">
-      <div className="container py-12">
+      <div className="py-12 px-4 md:px-12">
         {/* Main Footer Content */}
-        <div className="grid gap-12 md:grid-cols-4">
+        
+        <div className="grid gap-12 md:grid-cols-3">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,31 +34,12 @@ export function Footer() {
             className="space-y-4"
           >
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold">YourName</span>
+              <span className="text-2xl font-bold">Afzaal Ahmad</span>
             </Link>
             <p className="text-muted-foreground">
               Building digital experiences that matter.
             </p>
-            <div className="flex gap-4">
-              {[
-                { icon: Github, url: "https://github.com/yourusername" },
-                { icon: Linkedin, url: "https://linkedin.com/in/yourprofile" },
-                { icon: Twitter, url: "https://twitter.com/yourhandle" },
-                { icon: Instagram, url: "https://instagram.com/yourprofile" },
-              ].map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  <social.icon className="h-5 w-5" />
-                </motion.a>
-              ))}
-            </div>
+            <SocialLinks isTitle={false} />
           </motion.div>
 
           {/* Quick Links */}
@@ -59,13 +52,8 @@ export function Footer() {
           >
             <h3 className="font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              {[
-                { name: "Home", href: "#home" },
-                { name: "Projects", href: "#projects" },
-                { name: "Experience", href: "#experience" },
-                { name: "Blog", href: "#blog" },
-              ].map((link) => (
-                <li key={link.name}>
+              {navItems?.map((link) => (
+                <li key={link.slug}>
                   <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -89,42 +77,17 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:ahmadafzaal703@gmail.com">ahmadafzaal703@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="tel:+971527483200">+971 52 7483200</a>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>San Francisco, CA</span>
+                <span>Dubai, UAE</span>
               </li>
             </ul>
-          </motion.div>
-
-          {/* Newsletter (Optional) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h3 className="font-semibold">Stay Updated</h3>
-            <p className="text-muted-foreground">
-              Subscribe to my newsletter for the latest updates.
-            </p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-2 rounded-md border bg-background text-sm"
-                required
-              />
-              <Button type="submit" size="sm">
-                Join
-              </Button>
-            </form>
           </motion.div>
         </div>
 
@@ -137,7 +100,7 @@ export function Footer() {
           className="border-t mt-12 pt-6 text-center text-sm text-muted-foreground"
         >
           <p>
-            © {currentYear} YourName. All rights reserved.
+            © {currentYear} Afzaal Ahmad. All rights reserved.
           </p>
           <p className="mt-2">
             Built with <span className="text-primary">Next.js</span> and <span className="text-primary">Shadcn/ui</span>
@@ -147,3 +110,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer

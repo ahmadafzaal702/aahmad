@@ -16,9 +16,9 @@ const Navbar = () => {
 
   const navItems = [
     { slug: "home", name: "Home", href: "/" },
-    { slug: "about", name: "About", href: "/about" },
-    { slug: "projects", name: "Projects", href: "/projects" },
-    { slug: "contact", name: "Contact", href: "/contact" },
+    { slug: "about", name: "About", href: "/pages/about" },
+    { slug: "projects", name: "Projects", href: "/pages/projects" },
+    { slug: "contact", name: "Contact", href: "/pages/contact" },
   ];
   //   FC return
   return (

@@ -7,32 +7,11 @@ import * as Slider from '@radix-ui/react-slider';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
 
-// Testimonial data
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "CTO at TechStart Inc.",
-    content: "Working with [Your Name] was an absolute pleasure. Their expertise in Next.js optimization helped us reduce page load times by 60%. They're not just a developer but a problem-solver who understands business needs.",
-    avatar: "/avatar-1.jpg",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Senior Product Manager, FinTech Corp",
-    content: "One of the most detail-oriented developers I've collaborated with. Delivered our AI integration project 2 weeks ahead of schedule while maintaining exceptional code quality.",
-    avatar: "/avatar-2.jpg",
-  },
-  {
-    id: 3,
-    name: "David Rodriguez",
-    role: "Startup Founder",
-    content: "[Your Name] transformed our MVP into a scalable product. Their ability to explain technical concepts to non-technical stakeholders is remarkable. Will hire again!",
-    avatar: "/avatar-3.jpg",
-  },
-];
+// data import
+import { testimonials } from '@/data/data';
 
-export function TestimonialsSection() {
+// Testimonials FC
+function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
@@ -43,8 +22,9 @@ export function TestimonialsSection() {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
+  // Testimonials FC return
   return (
-    <section className="container py-12" id="testimonials">
+    <section className="py-12 px-4 md:px-12" id="testimonials">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +47,7 @@ export function TestimonialsSection() {
             className="flex"
           >
             {testimonials.map((testimonial) => (
-              <div 
+              <div
                 key={testimonial.id}
                 className="flex-shrink-0 w-full px-4"
               >
@@ -84,8 +64,8 @@ export function TestimonialsSection() {
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="h-12 w-12 rounded-full bg-gradient-to-r from-primary to-secondary overflow-hidden">
-                      <img 
-                        src={testimonial.avatar} 
+                      <img
+                        src={testimonial.avatar}
                         alt={testimonial.name}
                         className="h-full w-full object-cover"
                       />
@@ -156,3 +136,5 @@ export function TestimonialsSection() {
     </section>
   );
 }
+
+export default TestimonialsSection
