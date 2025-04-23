@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Code, ExternalLink, Github } from 'lucide-react';
 
 // data import
-import { projects } from '@/data/data'
+import { projects } from '@/data/projects'
+import { Title } from '../shared';
 
 
 const categories = [
@@ -29,18 +30,8 @@ function ProjectsSection() {
   // Projects FC return
   return (
     <section className="py-12 px-4 md:px-12" id="projects">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">Featured Projects</h2>
-        <p className="text-muted-foreground mt-2">
-          A selection of my recent work
-        </p>
-      </motion.div>
+
+    <Title title="Featured Projects" tagline="A selection of my recent work" />
 
       {/* Category filters */}
       <motion.div

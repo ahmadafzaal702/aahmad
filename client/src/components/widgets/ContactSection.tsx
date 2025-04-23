@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-import { SocialLinks } from '../shared';
+import { SocialLinks, Title } from '../shared';
 
 // Form validation schema
 const formSchema = z.object({
@@ -38,18 +38,8 @@ const ContactSection = () =>  {
   // Contact FC return
   return (
     <section className="py-12 px-4 md:px-24" id="contact">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">Get In Touch</h2>
-        <p className="text-muted-foreground mt-2">
-          Let's collaborate or chat about opportunities!
-        </p>
-      </motion.div>
+      
+      <Title title="Get In Touch" tagline="Let's collaborate or chat about opportunities!" />
 
       <div className="grid gap-12 md:grid-cols-2">
         {/* Contact Form */}

@@ -8,14 +8,14 @@ import { BlogSection } from "@/components/blogs";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-hidden min-h-screen px-4">
+    <main className="w-full overflow-hidden min-h-screen">
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
       <AboutSection />
-      <BlogSection />
-      <TestimonialsSection />
+      {/* <BlogSection /> */}
+      {/* <TestimonialsSection /> */}
       <ContactSection />
     </main>
   );

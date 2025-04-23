@@ -5,8 +5,10 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
+import { Title } from '../shared';
+
 // data import
-import { skillsSummary } from '@/data/data'
+import { skillsSummary } from '@/data/skills'
 
 
 // Skills FC
@@ -20,18 +22,8 @@ function SkillsSection() {
   // Skills FC return
   return (
     <section className="py-12 px-4 md:px-12" id="skills">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">Technical Proficiencies</h2>
-        <p className="text-muted-foreground mt-2">
-          Tools and technologies I work with
-        </p>
-      </motion.div>
+      
+      <Title title="Technical Proficiencies" tagline="Tools and technologies I work with" />
 
       <div className="mx-auto max-w-4xl space-y-4">
         {skillsSummary.map((category) => (

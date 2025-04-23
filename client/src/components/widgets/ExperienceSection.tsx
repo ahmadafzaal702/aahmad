@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { Briefcase, CalendarDays, MapPin } from 'lucide-react';
 
 // data import
-import { experiences } from '@/data/data';
+import { experiences } from '@/data/experience';
+import { Title } from '../shared';
 
 // Experiences FC
 function ExperienceSection() {
@@ -12,18 +13,8 @@ function ExperienceSection() {
   // Experiences FC return
   return (
     <section className="py-12 px-4 md:px-12" id="experience">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">Professional Journey</h2>
-        <p className="text-muted-foreground mt-2">
-          Where I've worked and what I've accomplished
-        </p>
-      </motion.div>
+
+      <Title title="Professional Journey" tagline="Where I've worked and what I've accomplished" />
 
       <div className="relative max-w-3xl mx-auto">
         {/* Timeline line */}
@@ -31,18 +22,18 @@ function ExperienceSection() {
 
         {experiences.map((exp, index) => (
           <motion.div
-            key={exp.id}
+            key={exp.slug}
             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
-            className={`relative mb-8 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}
+            className={`relative mb-8 pl-10 md:pl-0`}
           >
             {/* Timeline dot */}
             <div className={`absolute top-1.5 left-0 w-4 h-4 rounded-full bg-primary border-4 border-background md:left-1/2 md:transform md:-translate-x-1/2 ${index % 2 === 0 ? 'md:-translate-x-1/2' : 'md:translate-x-1/2'}`} />
 
             {/* Experience card */}
-            <div className={`p-6 rounded-lg border bg-card shadow-sm ${index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'}`}>
+            <div className={`p-6 rounded-lg border bg-card shadow-sm`}>
               <div className="flex items-center gap-2 mb-1">
                 <Briefcase className="h-5 w-5 text-primary" />
                 <h3 className="text-xl font-semibold">{exp.role}</h3>
@@ -51,7 +42,7 @@ function ExperienceSection() {
               <div className="flex flex-wrap items-center gap-4 mb-4">
                 <span className="flex items-center gap-1.5 text-sm">
                   <CalendarDays className="h-4 w-4 text-muted-foreground" />
-                  {exp.duration}
+                  {exp.startDate} -  {exp.endDate}
                 </span>
                 <span className="flex items-center gap-1.5 text-sm">
                   <MapPin className="h-4 w-4 text-muted-foreground" />
@@ -62,7 +53,7 @@ function ExperienceSection() {
               <div className="mb-4">
                 <h4 className="font-medium mb-2">Key Contributions:</h4>
                 <ul className="space-y-2">
-                  {exp.description.map((item, i) => (
+                  {exp.responsibilities?.map((item, i) => (
                     <motion.li 
                       key={i}
                       initial={{ opacity: 0 }}
