@@ -3,26 +3,22 @@
 import { motion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Download, Award, School } from 'lucide-react';
+import { Download, Award } from 'lucide-react';
+
+import { Education, Awards, Title } from '../shared';
+
+// data imports
+import { educationData } from '@/data/education';
+import { awardsData } from '@/data/awards';
 
 // About FC
-export const AboutSection = ()=> {
-  
+export const AboutSection = () => {
+
   // About FC return
   return (
     <section className="py-12 px-4 md:px-12" id="about">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">About Me</h2>
-        <p className="text-muted-foreground mt-2">
-          My journey, education, and achievements
-        </p>
-      </motion.div>
+      
+      <Title title="About Me" tagline="My journey, education, and achievements" />
 
       <div className="grid gap-12 md:grid-cols-3">
         {/* Profile Column */}
@@ -50,7 +46,7 @@ export const AboutSection = ()=> {
 
           {/* Quick Facts */}
           <div className="space-y-3 w-full">
-            <motion.div 
+            <motion.div
               whileHover={{ x: 5 }}
               className="flex items-center gap-3 p-3 rounded-lg bg-secondary"
             >
@@ -78,13 +74,13 @@ export const AboutSection = ()=> {
             <h3 className="text-xl font-semibold">Personal Summary</h3>
             <div className="space-y-3 text-muted-foreground">
               <p>
-                Passionate full-stack developer with expertise in modern web technologies. 
-                Specializing in building responsive, accessible applications with 
-                React, Next.js, and Node.js. Committed to writing clean, 
+                Passionate full-stack developer with expertise in modern web technologies.
+                Specializing in building responsive, accessible applications with
+                React, Next.js, and Node.js. Committed to writing clean,
                 maintainable code and solving complex problems.
               </p>
               <p>
-                When I'm not coding, you can find me contributing to open-source 
+                When I'm not coding, you can find me contributing to open-source
                 projects, mentoring junior developers, or exploring new hiking trails.
               </p>
             </div>
@@ -94,35 +90,16 @@ export const AboutSection = ()=> {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Education</h3>
             <div className="space-y-6">
-              <motion.div 
-                whileHover={{ scale: 1.01 }}
-                className="p-4 rounded-lg border"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary">
-                    <School className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Master of Science in Computer Science</h4>
-                    <p className="text-sm text-muted-foreground">Stanford University | 2018 - 2020</p>
-                  </div>
-                </div>
-              </motion.div>
 
-              <motion.div 
-                whileHover={{ scale: 1.01 }}
-                className="p-4 rounded-lg border"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary">
-                    <School className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Bachelor of Science in Software Engineering</h4>
-                    <p className="text-sm text-muted-foreground">MIT | 2014 - 2018</p>
-                  </div>
-                </div>
-              </motion.div>
+              {
+                educationData?.map((education) => {
+                  return (
+                    <div key={education.slug}>
+                      <Education education={education} />
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
 
@@ -130,22 +107,16 @@ export const AboutSection = ()=> {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Honors & Certifications</h3>
             <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                "AWS Certified Solutions Architect",
-                "Google Professional Data Engineer",
-              ].map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-2 p-3 rounded-lg bg-secondary"
-                >
-                  <Award className="h-4 w-4 mt-0.5 flex-shrink-0 text-primary" />
-                  <span className="text-sm">{item}</span>
-                </motion.div>
-              ))}
+              {
+
+                awardsData?.map((award, index) => {
+                  return (
+                    <div key={index}>
+                      <Awards index={index} award={award} />
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
         </motion.div>

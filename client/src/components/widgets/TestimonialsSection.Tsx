@@ -8,7 +8,8 @@ import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
 
 // data import
-import { testimonials } from '@/data/data';
+import { testimonials } from '@/data/testimonials';
+import { Title } from '../shared';
 
 // Testimonials FC
 function TestimonialsSection() {
@@ -25,18 +26,8 @@ function TestimonialsSection() {
   // Testimonials FC return
   return (
     <section className="py-12 px-4 md:px-12" id="testimonials">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">Kind Words</h2>
-        <p className="text-muted-foreground mt-2">
-          What colleagues and clients say
-        </p>
-      </motion.div>
+
+    <Title title="Kind Words" tagline="What colleagues and clients say" />
 
       <div className="relative max-w-4xl mx-auto">
         {/* Testimonial Cards */}

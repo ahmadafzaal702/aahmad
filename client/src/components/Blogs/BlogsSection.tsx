@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 // data
-import {blogs} from '@/data/data'
+import { blogs } from '@/data/blogs'
+import { Title } from '../shared';
 
 // Blogs FC
 function BlogSection() {
@@ -23,18 +24,8 @@ function BlogSection() {
   // Blogs FC return
   return (
     <section className="py-12 px-4 md:px-12" id="blog">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold">My Blog</h2>
-        <p className="text-muted-foreground mt-2">
-          Thoughts on projects, tech, and industry trends
-        </p>
-      </motion.div>
+
+      <Title title="My Blog" tagline="Thoughts on projects, tech, and industry trends" />
 
       {/* Category Filters */}
       <motion.div

@@ -16,9 +16,11 @@ const Navbar = () => {
 
   const navItems = [
     { slug: "home", name: "Home", href: "/" },
-    { slug: "about", name: "About", href: "/pages/about" },
-    { slug: "projects", name: "Projects", href: "/pages/projects" },
-    { slug: "contact", name: "Contact", href: "/pages/contact" },
+    { slug: "skills", name: "Skills", href: "#skills" },
+    { slug: "projects", name: "Projects", href: "#projects" },
+    { slug: "experiences", name: "Experiences", href: "/#xperience" },
+    { slug: "about", name: "About", href: "#about" },
+    { slug: "contact", name: "Contact", href: "#contact" },
   ];
   //   FC return
   return (
@@ -55,9 +57,9 @@ const Navbar = () => {
               <ThemeMenu />
             </div>
             <div className="hidden md:block">
-              <Button variant="outline" size="sm">
+              {/* <Button variant="outline" size="sm">
                 Sign In
-              </Button>
+              </Button> */}
             </div>
 
             <Toggle />
