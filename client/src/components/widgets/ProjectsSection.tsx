@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Code, ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 // data import
 import { projects } from '@/data/projects'
@@ -71,7 +71,7 @@ function ProjectsSection() {
             {/* Project image */}
             <div className="h-48 overflow-hidden bg-gray-100 dark:bg-gray-800">
               <motion.img
-                src={project.image}
+                src={project.image.src}
                 alt={project.title}
                 className="w-full h-full object-cover"
                 initial={{ opacity: 0.9 }}
