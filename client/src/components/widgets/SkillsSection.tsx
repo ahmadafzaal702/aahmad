@@ -21,7 +21,7 @@ function SkillsSection() {
 
   // Skills FC return
   return (
-    <section className="py-12 px-4 md:px-12" id="skills">
+    <section className="py-8 px-4 md:px-12" id="skills">
       
       <Title title="Technical Proficiencies" tagline="Tools and technologies I work with" />
 

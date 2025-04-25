@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { Toggle } from "@/components/ui/toggle";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X,} from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 import { ThemeMenu } from "../theme/ThemeMenu";
@@ -62,7 +61,6 @@ const Navbar = () => {
               </Button> */}
             </div>
 
-            <Toggle />
             {/* Mobile menu button */}
             <Sheet>
               <SheetTrigger asChild>

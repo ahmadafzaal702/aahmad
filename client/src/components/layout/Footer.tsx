@@ -35,7 +35,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">Afzaal Ahmad</span>
             </Link>
             <p className="text-muted-foreground">
-              Building digital experiences that matter.
+            Smart code. Smarter AI. Future-ready.
             </p>
             <SocialLinks isTitle={false} />
           </motion.div>

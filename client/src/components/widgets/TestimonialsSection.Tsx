@@ -25,7 +25,7 @@ function TestimonialsSection() {
 
   // Testimonials FC return
   return (
-    <section className="py-12 px-4 md:px-12" id="testimonials">
+    <section className="py-8 px-4 md:px-12" id="testimonials">
 
     <Title title="Kind Words" tagline="What colleagues and clients say" />
 
