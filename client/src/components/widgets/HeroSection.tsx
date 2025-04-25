@@ -1,8 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Download, Award } from "lucide-react";
+
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+import profile from "@/assests/afzaal ahmad 2.jpeg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,14 +26,14 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
 
 function HeroSection() {
   return (
-    <div className="relative overflow-hidden bg-border">
+    <div className="relative overflow-hidden bg-bg-hero">
       {/* Gradient Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/40 via-background/80 to-background" />
@@ -38,17 +42,19 @@ function HeroSection() {
 
       {/* Content */}
       <motion.section
-        className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center text-center gap-8 pb-8 pt-4 md:pt-8"
+        className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center text-center gap-5 pb-6 pt-4 md:pt-6"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div
-          className="max-w-3xl space-y-6"
-          variants={itemVariants}
-        >
+        <motion.div className="max-w-3xl space-y-6" variants={itemVariants}>
+          <Avatar className="mx-auto h-40 w-40 border-3 border-primary">
+            <AvatarImage src={profile.src} alt="Afzaal Ahmad" />
+            <AvatarFallback>AF</AvatarFallback>
+          </Avatar>
+
           <motion.h1
-            className="h-28 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+            className="h-28 mb-2 text-4xl font-bold tracking-tight sm:text-5xl md:text-[3.2rem]"
             variants={itemVariants}
           >
             <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
@@ -56,13 +62,27 @@ function HeroSection() {
             </span>
           </motion.h1>
 
+          {/* Quick Facts */}
+          <div className="mx-auto w-80 md:w-100">
+            <motion.div
+              whileHover={{ x: 5 }}
+              className="flex items-center gap-3 p-2 rounded-lg bg-popover border"
+            >
+              <div className="p-2 rounded-full bg-primary/10 text-primary">
+                <Award className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-medium">5+ Years</p>
+                <p className="text-sm text-muted-foreground">Experience</p>
+              </div>
+            </motion.div>
+          </div>
+
           <motion.i
             className="text-lg text-muted-foreground md:text-xl"
             variants={itemVariants}
           >
-            Merging robust development with generative AI to build smarter digital experiences.
-            <br />
-            <span className="text-sm text-muted-foreground">Coding the future—where web apps meet intelligent AI systems.</span>
+            Coding the future—where sleek web apps meet intelligent, powerful AI systems.
           </motion.i>
         </motion.div>
 
@@ -70,13 +90,15 @@ function HeroSection() {
           className="flex flex-wrap justify-center gap-4"
           variants={itemVariants}
         >
-          <Button size="lg" asChild>
+          <Button size="lg" className="w-full md:w-auto" asChild>
             <motion.a
-              href="#projects"
+              href="/afzaal-ahmad-frontend-fullstack.pdf"
+              download="afzaal-ahmad-frontend-fullstack.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View My Work <ArrowRight className="ml-2 h-4 w-4" />
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
             </motion.a>
           </Button>
           <Button variant="outline" size="lg" asChild>
@@ -92,15 +114,21 @@ function HeroSection() {
       </motion.section>
 
       {/* Animated Scrolling Indicator */}
-      <motion.div
+      {/* <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
           <path d="M12 5v14M19 12l-7 7-7-7" />
         </svg>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

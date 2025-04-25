@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-import { SocialLinks, Title, Contact } from '../shared';
+import { Title } from '../shared';
 
 // Form validation schema
 const formSchema = z.object({
@@ -36,18 +36,16 @@ const ContactSection = () =>  {
 
   // Contact FC return
   return (
-    <section className="py-12 px-4 md:px-24" id="contact">
+    <section className="py-8 px-4 md:px-12" id="contact">
       
       <Title title="Get In Touch" tagline="Let's collaborate or chat about opportunities!" />
-
-      <div className="grid gap-12 md:grid-cols-2">
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="space-y-6"
+          className="space-y-6 max-w-2xl mx-auto"
         >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
@@ -95,25 +93,6 @@ const ContactSection = () =>  {
             </Button>
           </form>
         </motion.div>
-
-        {/* Contact Info & Socials */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Contact Information</h3>
-            <Contact />
-          </div>
-
-          {/* Social Links */}
-          <SocialLinks isTitle={true} />
- 
-        </motion.div>
-      </div>
     </section>
   );
 }

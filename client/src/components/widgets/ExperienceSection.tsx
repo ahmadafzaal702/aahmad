@@ -12,7 +12,7 @@ function ExperienceSection() {
   
   // Experiences FC return
   return (
-    <section className="py-12 px-4 md:px-12" id="experience">
+    <section className="py-8 px-4 md:px-12" id="experience">
 
       <Title title="Professional Journey" tagline="Where I've worked and what I've accomplished" />
 

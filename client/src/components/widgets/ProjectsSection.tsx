@@ -29,7 +29,7 @@ function ProjectsSection() {
 
   // Projects FC return
   return (
-    <section className="py-12 px-4 md:px-12" id="projects">
+    <section className="py-8 px-4 md:px-12" id="projects">
 
     <Title title="Featured Projects" tagline="A selection of my recent work" />
 

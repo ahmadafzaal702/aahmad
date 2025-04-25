@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cabin, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 // components imports
@@ -7,8 +7,8 @@ import { Navbar, Footer } from "@/components/layout";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
 // fonts configurations
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cabinSans = Cabin({
+  variable: "--font-cabin-sans",
   subsets: ["latin"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cabinSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
