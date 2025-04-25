@@ -2,9 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Mail, Phone, MapPin} from 'lucide-react';
 
-import { SocialLinks } from '../shared';
+import { SocialLinks, Contact, Copyright } from '../shared';
 
 const navItems = [
   { slug: "home", name: "Home", href: "/" },
@@ -16,7 +15,6 @@ const navItems = [
 
 // Footer FC
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
 
   // Footer FC return
   return (
@@ -74,38 +72,13 @@ const Footer = () => {
             className="space-y-4"
           >
             <h3 className="font-semibold">Get In Touch</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:ahmadafzaal703@gmail.com">ahmadafzaal703@gmail.com</a>
-              </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+971527483200">+971 52 7483200</a>
-              </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Dubai, UAE</span>
-              </li>
-            </ul>
+            <Contact />
           </motion.div>
         </div>
 
         {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          viewport={{ once: true }}
-          className="border-t mt-12 pt-6 text-center text-sm text-muted-foreground"
-        >
-          <p>
-            © {currentYear} Afzaal Ahmad. All rights reserved.
-          </p>
-          <p className="mt-2">
-            Built with <span className="text-primary">Next.js</span> and <span className="text-primary">Shadcn/ui</span>
-          </p>
-        </motion.div>
+        <Copyright />
+        
       </div>
     </footer>
   );

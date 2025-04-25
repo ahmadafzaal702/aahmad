@@ -23,17 +23,12 @@ export const skillsSummary: SkillSummaryI[] = [
     {
         slug: "devops",
         category: "DevOps",
-        skills: "AWS (Lambda, S3), CI/CD, Docker, Vercel, Cloudinary",
+        skills: "AWS (Lambda, S3, EC2), Docker, GitHub Actions, Vercel, Cloudinary",
     },
-    // {
-    //     slug: "soft",
-    //     category: "Soft Skills",
-    //     skills: "Teamwork, Communication, Troubleshooting, Problem Solving, Work Ethics, Open to Positive Criticism, Adaptability, Collaboration, Ability to Work Under Pressure, Attention to Details.",
-    // },
     {
         slug: "tools",
         category: "Tools",
-        skills: "GIT, GitHub, Jira, Postman, Figma",
+        skills: "Jest, GIT, GitHub, Jira, Postman, Figma",
     },
 ];
 

@@ -11,13 +11,15 @@ import { Education, Awards, Title } from '../shared';
 import { educationData } from '@/data/education';
 import { awardsData } from '@/data/awards';
 
+import profile from '@/assests/afzaal ahmad 2.jpeg';
+
 // About FC
 export const AboutSection = () => {
 
   // About FC return
   return (
     <section className="py-12 px-4 md:px-12" id="about">
-      
+
       <Title title="About Me" tagline="My journey, education, and achievements" />
 
       <div className="grid gap-12 md:grid-cols-3">
@@ -30,18 +32,18 @@ export const AboutSection = () => {
           className="flex flex-col items-center md:items-start space-y-6"
         >
           <Avatar className="h-48 w-48 border-4 border-primary">
-            <AvatarImage src="/profile.jpg" alt="Your Name" />
-            <AvatarFallback>YN</AvatarFallback>
+            <AvatarImage src={profile.src} alt="Afzaal Ahmad" />
+            <AvatarFallback>AF</AvatarFallback>
           </Avatar>
 
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold">Afzaal Ahmad</h3>
-            <p className="text-muted-foreground">Full Stack Developer</p>
+            <p className="text-muted-foreground">Full Stack Developer | AI/ML Enthusiast</p>
           </div>
 
           <Button className="w-full md:w-auto">
             <Download className="mr-2 h-4 w-4" />
-            Download Resume
+            <a href='/afzaal-ahmad-frontend-fullstack.pdf' download="afzaal-ahmad-frontend-fullstack.pdf">Download Resume</a>
           </Button>
 
           {/* Quick Facts */}
@@ -74,14 +76,9 @@ export const AboutSection = () => {
             <h3 className="text-xl font-semibold">Personal Summary</h3>
             <div className="space-y-3 text-muted-foreground">
               <p>
-                Passionate full-stack developer with expertise in modern web technologies.
-                Specializing in building responsive, accessible applications with
-                React, Next.js, and Node.js. Committed to writing clean,
-                maintainable code and solving complex problems.
-              </p>
-              <p>
-                When I'm not coding, you can find me contributing to open-source
-                projects, mentoring junior developers, or exploring new hiking trails.
+                A highly motivated Web Applications Developer with over 5 years of experience and master’s qualified in IT, now expanding expertise
+                in AI/ML integration for web applications. Skilled in building high-performance web applications using JavaScript, React.js, Next.js,
+                and TypeScript. Passionate about writing clean code, collaborating in Agile teams, and innovation in AI-powered solutions.
               </p>
             </div>
           </div>

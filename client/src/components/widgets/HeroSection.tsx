@@ -29,7 +29,7 @@ const itemVariants = {
 
 function HeroSection() {
   return (
-    <div className="relative overflow-hidden bg-bg-hero">
+    <div className="relative overflow-hidden bg-border">
       {/* Gradient Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/40 via-background/80 to-background" />

@@ -7,9 +7,8 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin } from 'lucide-react';
 
-import { SocialLinks, Title } from '../shared';
+import { SocialLinks, Title, Contact } from '../shared';
 
 // Form validation schema
 const formSchema = z.object({
@@ -107,34 +106,7 @@ const ContactSection = () =>  {
         >
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Contact Information</h3>
-            
-            <div className="space-y-3">
-              <motion.a
-                href="mailto:your.email@example.com"
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground"
-              >
-                <Mail className="h-5 w-5 text-primary" />
-                <span>your.email@example.com</span>
-              </motion.a>
-
-              <motion.a
-                href="tel:+1234567890"
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground"
-              >
-                <Phone className="h-5 w-5 text-primary" />
-                <span>+1 (234) 567-890</span>
-              </motion.a>
-
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-muted-foreground"
-              >
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>San Francisco, CA (Remote)</span>
-              </motion.div>
-            </div>
+            <Contact />
           </div>
 
           {/* Social Links */}

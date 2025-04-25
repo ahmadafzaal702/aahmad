@@ -33,7 +33,7 @@ function ExperienceSection() {
             <div className={`absolute top-1.5 left-0 w-4 h-4 rounded-full bg-primary border-4 border-background md:left-1/2 md:transform md:-translate-x-1/2 ${index % 2 === 0 ? 'md:-translate-x-1/2' : 'md:translate-x-1/2'}`} />
 
             {/* Experience card */}
-            <div className={`p-6 rounded-lg border bg-card shadow-sm`}>
+            <div className={`p-6 rounded-lg border bg-card shadow-sm ${index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'}`}>
               <div className="flex items-center gap-2 mb-1">
                 <Briefcase className="h-5 w-5 text-primary" />
                 <h3 className="text-xl font-semibold">{exp.role}</h3>

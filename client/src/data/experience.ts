@@ -21,11 +21,12 @@ export const experiences = [
         isPresent: true,
         location: "Dubai, United Arab Emirates",
         responsibilities: [
-            "Built BI dashboards with React, JavaScript, and integrated.",
-            "Added AI chatbot for real-time user interactions.",
-            "Managed Agile workflows using Jira and Git.",
+            "Building scalable BI software using JavaScript, ReactJS, jQuery, and other libraries.",
+            "Integrated AI-powered chatbot into the application for real-time interactions",
+            "Led component-based architecture and implemented reusable UI modules.",
+            "Participated in Agile sprints, using Jira for task management and Git for version control"
         ],
-        skills: ["Next.js", "TypeScript", "Tailwind CSS", "MySql", "AWS", "Docker"]
+        skills: ["React.js", "TypeScript", "MySql", "AWS", "Docker"]
     },
     {
         slug: "lloyds",
@@ -36,13 +37,13 @@ export const experiences = [
         isPresent: false,
         location: "Pakistan",
         responsibilities: [
-            "Built frontend applications from scratch using ReactJS, NextJS, and modern CSS.",
-            "Developed REST APIs with ExpressJS (Node) and integrated authentication using JWT.",
-            "Managed DevOps & cloud infra using CI/CD tools and Git for version control.",
+            "Developed full-stack web applications using React.js, Next.js, Node.js, and Express.js.",
+            "Implemented API-driven architecture and JWT-based authentication.",
+            "Managed CI/CD pipelines and deployments using GitHub Actions and AWS.",
             "Collaborated cross-functionally with designers & developers in Agile workflows.",
-            "Participated in the full life cycle of new website development projects.",
+            "Delivered polished, production-grade interfaces across 4+ client projects.",
         ],
-        skills: ["Node.js", "React", "MongoDB", "AWS", "Docker"]
+        skills: ["React.js", "Next.js", "TypeScript", "Node/Express.js", "MongoDB", "AWS"]
     },
     {
         slug: "nerds",
@@ -53,24 +54,25 @@ export const experiences = [
         isPresent: false,
         location: "Pakistan",
         responsibilities: [
-            "Designed responsive UIs in React.js with Figma, Material UI, and Bootstrap.",
-            "Managed state efficiently using Redux, Context API, and Redux Toolkit for data flow.",
-            "Integrated RESTful APIs, handling payloads and responses for smooth frontend-backend connectivity.",
+            "Developed responsive UI/UX designs in React.js using Figma, Material UI, and Bootstrap.",
+            "Implemented efficient state management with Redux Toolkit and Context API.  ",
+            "Integrated RESTful APIs and handled dynamic front-end data rendering.",
+            "Contributed to React Native tasks for the development of Android and iOS mobile applications."
         ],
         skills: ["JavaScript", "React.js", "Redux Toolkit", "WordPress"]
     },
     {
         slug: "fiverr",
         role: "Web Developer",
-        company: "Fiverr",
+        company: "@ Fiverr",
         startDate: "March 2019",
         endDate: "July 2020",
         isPresent: false,
         location: "Pakistan",
         responsibilities: [
-            "Developed websites in WordPress and Shopify for US based clients.",
-            "Expertise of creating front-end using HTML/HTML5, CSS/CSS3, Bootstrap.",
-            "Customize themes according to the requirements with Cross Browser Compatibility.",
+            "Delivered responsive websites for US-based clients using WordPress and Shopify.  ",
+            "Built custom front-end interfaces using HTML5, CSS3, and Bootstrap.",
+            "Customized themes to meet unique business needs with full cross-browser compatibility.  ",
         ],
         skills: ["HTML/CSS", "JavaScript", "Shopify", "WordPress"]
     },

@@ -1,20 +1,18 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 
 // SocialLinks FC
 const SocialLinks = ({ isTitle }: { isTitle: boolean }) => {
 
     const socialLinks = [
-        { icon: Linkedin, url: "https://linkedin.com/in/yourprofile" },
-        { icon: Github, url: "https://github.com/yourusername" },
+        { icon: Linkedin, url: "https://www.linkedin.com/in/afzaalahmad845/" },
+        { icon: Github, url: "https://github.com/ahmadafzaal702" },
     ]
     // SocialLinks FC return
     return (
         <>
             <div className="space-y-4">
-                {
-                    isTitle && <h3 className="text-xl font-semibold">Follow Me</h3>
-                }
+                {isTitle && <h3 className="text-xl font-semibold">Follow Me</h3>}
 
                 <div className="flex gap-4">
                     {socialLinks?.map((social, index) => (
@@ -32,8 +30,6 @@ const SocialLinks = ({ isTitle }: { isTitle: boolean }) => {
                     ))}
                 </div>
             </div>
-
-
         </>
     )
 };
