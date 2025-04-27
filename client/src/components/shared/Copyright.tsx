@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 const Copyright = () => {
     const currentYear = new Date().getFullYear();
