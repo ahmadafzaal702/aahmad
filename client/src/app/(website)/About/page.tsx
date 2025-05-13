@@ -1,10 +1,14 @@
-import React from 'react'
-import { AboutSection } from '@/components/widgets/AboutSection'
+"use client";
+
+import React from "react";
+import { AboutSection } from "@/components/widgets/AboutSection";
 
 const About = () => {
   return (
-    <div><AboutSection /></div>
-  )
-}
+    <div>
+      <AboutSection />
+    </div>
+  );
+};
 
-export default About
+export default About;
