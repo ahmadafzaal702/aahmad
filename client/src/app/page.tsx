@@ -1,10 +1,11 @@
 import {
-  HeroSection, SkillsSection, ProjectsSection, ExperienceSection,
-  AboutSection, ContactSection, TestimonialsSection
+  HeroSection,
+  SkillsSection,
+  ProjectsSection,
+  ExperienceSection,
+  AboutSection,
+  ContactSection,
 } from "@/components/widgets";
-
-import { BlogSection } from "@/components/blogs";
-
 
 export default function Home() {
   return (

@@ -1,33 +1,36 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { motion } from 'framer-motion';
-import * as Slider from '@radix-ui/react-slider';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import React from 'react';
+import { motion } from "framer-motion";
+import * as Slider from "@radix-ui/react-slider";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
 // data import
-import { testimonials } from '@/data/testimonials';
-import { Title } from '../shared';
+import { testimonials } from "@/data/testimonials";
+import { Title } from "../shared";
 
 // Testimonials FC
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
   };
 
   // Testimonials FC return
   return (
     <section className="py-8 px-4 md:px-12" id="testimonials">
-
-    <Title title="Kind Words" tagline="What colleagues and clients say" />
+      <Title title="Kind Words" tagline="What colleagues and clients say" />
 
       <div className="relative max-w-4xl mx-auto">
         {/* Testimonial Cards */}
@@ -38,10 +41,7 @@ function TestimonialsSection() {
             className="flex"
           >
             {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="flex-shrink-0 w-full px-4"
-              >
+              <div key={testimonial.id} className="flex-shrink-0 w-full px-4">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -51,7 +51,7 @@ function TestimonialsSection() {
                 >
                   <Quote className="absolute top-6 left-6 h-8 w-8 text-primary opacity-10" />
                   <p className="text-lg italic mb-6 relative z-10">
-                    "{testimonial.content}"
+                    {testimonial.content}
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="h-12 w-12 rounded-full bg-gradient-to-r from-primary to-secondary overflow-hidden">
@@ -95,7 +95,9 @@ function TestimonialsSection() {
             {testimonials.map((_, i) => (
               <Slider.Thumb
                 key={i}
-                className={`block h-3 w-3 rounded-full ${currentIndex === i ? 'bg-primary' : 'bg-border'} hover:bg-primary focus:outline-none`}
+                className={`block h-3 w-3 rounded-full ${
+                  currentIndex === i ? "bg-primary" : "bg-border"
+                } hover:bg-primary focus:outline-none`}
                 onClick={() => setCurrentIndex(i)}
               />
             ))}
@@ -118,14 +120,16 @@ function TestimonialsSection() {
         viewport={{ once: true }}
         className="flex flex-wrap justify-center gap-8 mt-12 opacity-70"
       >
-        {["TechStart", "FinTech Corp", "AI Ventures", "NextGen Labs"].map((company) => (
-          <div key={company} className="text-muted-foreground font-medium">
-            {company}
-          </div>
-        ))}
+        {["TechStart", "FinTech Corp", "AI Ventures", "NextGen Labs"].map(
+          (company) => (
+            <div key={company} className="text-muted-foreground font-medium">
+              {company}
+            </div>
+          )
+        )}
       </motion.div>
     </section>
   );
 }
 
-export default TestimonialsSection
+export default TestimonialsSection;

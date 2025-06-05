@@ -1,14 +1,14 @@
 // Experiences Types
-interface ExperiencesInterface {
-    slug: string;
-    title: string;
-    company: string;
-    startDate: string;
-    endDate: string;
-    isPresent: boolean;
-    location: string;
-    responsibilities: string[];
-}
+// interface ExperiencesInterface {
+//     slug: string;
+//     title: string;
+//     company: string;
+//     startDate: string;
+//     endDate: string;
+//     isPresent: boolean;
+//     location: string;
+//     responsibilities: string[];
+// }
 
 // Experiences Array
 export const experiences = [
