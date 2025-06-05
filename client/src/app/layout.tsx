@@ -1,6 +1,5 @@
-
 import type { Metadata } from "next";
-import { Cabin, Geist, Geist_Mono } from "next/font/google";
+import { Cabin } from "next/font/google";
 import "./globals.css";
 
 // components imports
@@ -10,11 +9,6 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 // fonts configurations
 const cabinSans = Cabin({
   variable: "--font-cabin-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -31,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning
-        className={`${cabinSans.variable} ${geistMono.variable} antialiased`}
+      <body
+        suppressHydrationWarning
+        className={`${cabinSans.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
